@@ -11,3 +11,13 @@ default:
 	$(MAKE) -C $(KDIR) M=$$PWD
 
 endif
+
+clean:
+	rm -f *.o
+	rm -f *.ko
+	rm -f .*.cmd
+	rm -f Module.symvers
+	rm -f modules.order
+	rm -f ods5.ko
+	rm -f ods5.mod
+	rm -f ods5.mod.c
