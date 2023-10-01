@@ -244,6 +244,6 @@ static int ods5_readdir(struct file *file, struct dir_context *ctx) {
 
 struct file_operations ods5_dir_operations = {
 	.read = generic_read_dir,
-	.iterate = ods5_readdir,
+	.iterate_shared = ods5_readdir,
 	.llseek = default_llseek,
 };
