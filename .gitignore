@@ -1,0 +1,6 @@
+*.cmd
+Module.symvers
+modules.order
+ods5.ko
+ods5.mod
+ods5.mod.c
