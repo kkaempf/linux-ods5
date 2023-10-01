@@ -222,6 +222,7 @@ static struct ods5_fid *ods5_find_match(char block[ODS5_BLOCK_SIZE],
 
 		l = fl;
 		dir = (struct ods5_dir *)(block + fnoff);
+		if (dir->namecount == 0) break;
 		ods5_debug(2, "flags.nametype: %d\n", dir->flags.nametype);
 		if (dir->flags.nametype==DIR_UCS2) {
 			ods5_debug(2, "nametype: <UCS2>\n");
@@ -234,7 +235,6 @@ static struct ods5_fid *ods5_find_match(char block[ODS5_BLOCK_SIZE],
 		}
 		else
 			ods5_debug(2, "name: %.*s\n", dir->namecount, dir->name);
-
 		/*
 		 * For isl-1 names,
 		 * compare upcased names: the given filename with the name in
